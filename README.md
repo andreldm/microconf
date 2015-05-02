@@ -1,4 +1,4 @@
-<p>
+<p align="center">
     <img height="103" width="349" alt="logo" src="https://raw.githubusercontent.com/andreldm/microconf/1185effa9386fb834f9764fabd3d807a6ca90032/assets/logo.png">
 </p>
 
