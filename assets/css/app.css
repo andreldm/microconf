@@ -15,3 +15,9 @@ body {
   background: #DCDCDC;
   font-family: 'Roboto', 'sans';
 }
+
+.title {
+  background: url('/img/logo.png') no-repeat center;
+  background-size: 250px 74px;
+  height: 90px;
+}
