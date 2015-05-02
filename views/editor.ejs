@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en' ng-app="microconf">
+  <head>
+    <meta charset='utf-8'>
+    <title>microconf</title>
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+        <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+
+  <body>
+    <div class="page-container">
+      <div class="container">
+
+        <div class="row title-row">
+          <div class="col-xs-12">
+            <div class="title-square"></div>
+            <strong style="font-size: 60px;">m</strong>
+            <small>&nbsp;</small>
+            <h1 style="display: inline;"><strong>icroconf</strong></h1>
+          </div>
+        </div>
+
+        <div class="form-horizontal" ng-controller="MainCtrl as ctrl">
+          <div class="form-group" ng-repeat="config in configs">
+            <div class="col-sm-2 control-label">
+              <label class="" for="{{config.key}}"><strong>{{config.key}}</strong></label>
+            </div>
+            <div class="col-sm-8" style="padding: 2px">
+              <input class="form-control" id="{{config.key}}" type="text" ng-model="config.value"/>
+            </div>
+            <div class="col-sm-2" style="padding: 2px">
+              <div class="btn-group">
+                <button type="button" class="btn" ng-click="save(config)">Save</button>
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a ng-click="delete(config)">Delete</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-xs-8 col-xs-offset-2 text-center" style="padding-top: 2px">
+              <button type="button" class="btn btn-primary" ng-click="ctrl.new()">New</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="padding-top: 25px">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="panel panel-default">
+              <div class="panel-heading"><strong>API</strong></div>
+              <table class="table">
+                <tr>
+                  <th>RESOURCE</th>
+                  <th>GET</th>
+                  <th>POST</th>
+                  <th>PUT</th>
+                  <th>DELETE</th>
+                </tr>
+                <tr>
+                  <td>/</td>
+                  <td colspan="4">This page</td>
+                </tr>
+                <tr>
+                  <td>/api</td>
+                  <td>Lists all configs</td>
+                  <td>Nothing</td>
+                  <td>Nothing</td>
+                  <td>Nothing</td>
+                </tr>
+                <tr>
+                  <td>/api/:key</td>
+                  <td>Retrieves config :key</td>
+                  <td>Nothing</td>
+                  <td>Updates config :key</td>
+                  <td>Deletes config :key</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
