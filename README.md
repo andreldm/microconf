@@ -1,8 +1,8 @@
-<p align="center">
-    <img height="128" width="128" alt="logo" src="https://raw.githubusercontent.com/andreldm/microconf/master/assets/logo.png">
+<p>
+    <img height="103" width="349" alt="logo" src="https://raw.githubusercontent.com/andreldm/microconf/1185effa9386fb834f9764fabd3d807a6ca90032/assets/logo.png">
 </p>
 
-# microconf
+---
 
 microconf is an ultra simple configuration management service meant for scenarios where other solutions such as Consul, ZooKeeper, doozerd and etcd would be way too much.
 
