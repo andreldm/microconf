@@ -49,15 +49,23 @@
 
           <div class="form-group">
             <div class="col-xs-8 col-xs-offset-2 text-center" style="padding-top: 2px">
-              <button type="button" class="btn btn-primary" ng-click="ctrl.new()">New</button>
+              <button type="button" class="btn btn-primary" ng-click="ctrl.new()">
+                <strong>New</strong>
+              </button>
             </div>
           </div>
         </div>
 
         <div class="row" style="padding-top: 25px">
           <div class="col-xs-8 col-xs-offset-2">
-            <div class="panel panel-default">
-              <div class="panel-heading"><strong>API</strong></div>
+            <div class="text-center">
+              <button class="btn btn-link" type="button" data-toggle="collapse"
+                      data-target="#apiTable" aria-expanded="false" aria-controls="apiTable">
+                <strong>API</strong>
+              </button>
+            </div>
+
+            <div class="well collapse" id="apiTable">
               <table class="table">
                 <tr>
                   <th>RESOURCE</th>
