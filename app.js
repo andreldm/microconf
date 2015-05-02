@@ -50,7 +50,7 @@ app.put('/api/:key', function(req, res) {
 
 app.delete('/api/:key', function(req, res) {
   var key = req.params.key;
-  storage.delete(key);
+  storage.remove(key);
   res.json({"key": key});
 });
 
