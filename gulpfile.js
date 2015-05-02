@@ -1,16 +1,12 @@
 var
 bower         = require('main-bower-files'),
 concat        = require('gulp-concat'),
-cssmin        = require('gulp-minify-css'),
-declare       = require('gulp-declare'),
 filter        = require('gulp-filter'),
 gulp          = require('gulp'),
-less          = require('gulp-less'),
 merge         = require('merge-stream'),
 minify        = require('gulp-minify-css'),
 rename        = require('gulp-rename'),
-uglify        = require('gulp-uglify'),
-wrap          = require('gulp-wrap')
+uglify        = require('gulp-uglify')
 ;
 
 var paths = {
@@ -32,7 +28,7 @@ var paths = {
 
 gulp.task('bower', function() {
   var jsFilter = filter('**/*.js');
-  var styleFilter = filter(['**/*.css', '**/*.less']);
+  var styleFilter = filter(['**/*.css']);
   var fontFilter = filter(['**/*.woff', '**/*.ttf']);
 
   var files = bower();
@@ -50,7 +46,6 @@ gulp.task('bower', function() {
     .pipe(jsFilter.restore())
 
     .pipe(styleFilter)
-    .pipe(less())
     .pipe(concat('vendor.css'))
     .pipe(minify())
     .pipe(gulp.dest(paths.public.css))
@@ -91,7 +86,7 @@ gulp.task('js', function() {
 
 gulp.task('minimize', ['bower', 'css', 'js'], function() {
   var css = gulp.src(paths.public.css + '/*')
-    .pipe(cssmin())
+    .pipe(minify())
     .pipe(gulp.dest(paths.public.css));
 
   var js = gulp.src(paths.public.js + '/*')
