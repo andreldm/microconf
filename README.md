@@ -9,10 +9,11 @@ microconf is an ultra simple configuration management service meant for scenario
 ## Getting Started
 
 * Get [Node.js](https://nodejs.org/)
-* Install gulp: `npm install -g gulp`
+* Install gulp and bower: `npm install -g gulp bower`
 * `git clone https://github.com/andreldm/microconf`
 * `cd microconf`
 * `npm install`
+* `bower install`
 * `gulp`
 * `npm start`
 
