@@ -1,8 +1,19 @@
 {
-  "author": "André Miranda",
+  "author": {
+    "name": "André Miranda",
+    "email": "andre42m@gmail.com"
+  },
   "name": "microconf",
-  "description": "A very simple configuration service",
+  "description": "An ultra simple configuration manager",
   "version": "0.0.1",
+  "license": "GPLv2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andreldm/microconf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreldm/microconf/issues"
+  },
   "scripts": {
     "start": "node app.js"
   },
