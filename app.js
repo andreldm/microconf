@@ -9,9 +9,10 @@ favicon      = require('serve-favicon'),
 morgan       = require('morgan'),
 
 editor       = require('./routes/editor'),
-storage      = require('./storage')
+Storage      = require('./storage')
 ;
 
+var storage = new Storage('store.db');
 var app = express();
 
 // setup environment
