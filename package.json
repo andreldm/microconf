@@ -1,12 +1,12 @@
 {
   "author": {
-    "name": "André Miranda",
+    "name": "Andre Miranda",
     "email": "andre42m@gmail.com"
   },
   "name": "microconf",
   "description": "An ultra simple configuration manager",
   "version": "0.0.1",
-  "license": "GPLv2",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/andreldm/microconf.git"
