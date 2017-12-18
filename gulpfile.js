@@ -15,14 +15,16 @@ var paths = {
     'js':       'assets/js/*.js',
     'fonts':    'assets/fonts/*',
     'img':      'assets/img/*',
-    'favicon':  'assets/icon.ico'
+    'favicon':  'assets/icon.ico',
+    'html':     'views/*.html'
   },
   'public': {
     'css':      'public/css',
     'js':       'public/js',
     'fonts':    'public/fonts',
     'img':      'public/img',
-    'favicon':  'public/'
+    'favicon':  'public/',
+    'html':     'public/'
   }
 };
 
@@ -67,7 +69,10 @@ gulp.task('assets', function() {
     .pipe(rename('favicon.ico'))
     .pipe(gulp.dest(paths.public.favicon));
 
-  return merge(fonts, img, favicon);
+  var html = gulp.src(paths.assets.html)
+    .pipe(gulp.dest(paths.public.html));
+
+  return merge(fonts, img, favicon, html);
 });
 
 gulp.task('css', function() {

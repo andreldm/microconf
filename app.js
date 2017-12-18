@@ -3,12 +3,10 @@ http         = require('http'),
 
 // express and its middlewares
 bodyParser   = require('body-parser'),
-engine       = require('ejs-locals'),
 express      = require('express'),
 favicon      = require('serve-favicon'),
 morgan       = require('morgan'),
 
-editor       = require('./routes/editor'),
 Storage      = require('./storage')
 ;
 
@@ -16,10 +14,7 @@ var storage = new Storage('store.db');
 var app = express();
 
 // setup environment
-app.engine('ejs', engine);
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -27,8 +22,6 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 // define routes
-app.all('/', editor.index);
-
 app.get('/api', function(req, res) {
   var keys = storage.all();
   var all = [];
